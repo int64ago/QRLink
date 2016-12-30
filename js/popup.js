@@ -15,12 +15,14 @@ const setQRCode = () => {
     let url = tabs[0].url;
     const reg = /(^https?:\/\/)(localhost|127\.0\.0\.1)/;
     const localIP = getLocalIP();
-    if (localIP && reg.test(url)) {
+    if (reg.test(url)) {
       settingEle.style.display = 'block';
       if (/^https?:\/\/localhost/.test(url)) {
         localEle.innerText = 'localhost';
       }
-      url = url.replace(reg, `$1${localIP}`);
+      if (localIP) {
+        url = url.replace(reg, `$1${localIP}`);
+      }
     }
     imgEle.setAttribute('src', `${QR_URL}${url}`)
   });

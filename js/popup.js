@@ -1,4 +1,4 @@
-const QR_URL = 'https://qr.302.at/chart?chs=150x150&cht=qr&choe=UTF-8&chl=';
+const QR_URL = 'https://qr.302.at/chart?chs=150x150&cht=qr&choe=UTF-8&chld=|1&chl=';
 
 const imgEle = document.querySelector('img');
 const inputEle = document.querySelector('input');

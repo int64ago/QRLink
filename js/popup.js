@@ -24,7 +24,7 @@ const setQRCode = () => {
         url = url.replace(reg, `$1${localIP}`);
       }
     }
-    imgEle.setAttribute('src', `${QR_URL}${url}`)
+    imgEle.setAttribute('src', `${QR_URL}${encodeURIComponent(url)}`)
   });
 }
 
